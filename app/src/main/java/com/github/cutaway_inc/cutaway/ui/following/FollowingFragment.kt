@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.notifications
+package com.github.cutaway_inc.cutaway.ui.following
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.github.cutaway_inc.cutaway.R
-import com.github.cutaway_inc.cutaway.databinding.FragmentNotificationsBinding
+import com.github.cutaway_inc.cutaway.databinding.FragmentFollowingBinding
 
-class NotificationsFragment : Fragment() {
+class FollowingFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private lateinit var followingViewModel: FollowingViewModel
+    private var _binding: FragmentFollowingBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,15 +23,15 @@ class NotificationsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+    ): View {
+        followingViewModel =
+            ViewModelProvider(this).get(FollowingViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentFollowingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = binding.textDashboard
+        followingViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root

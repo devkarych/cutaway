@@ -1,13 +1,13 @@
-package com.github.cutaway_inc.cutaway.ui.dashboard
+package com.github.cutaway_inc.cutaway.ui.personal_cutaway
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class PersonalCutawayViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is cutaway Fragment"
     }
     val text: LiveData<String> = _text
 }

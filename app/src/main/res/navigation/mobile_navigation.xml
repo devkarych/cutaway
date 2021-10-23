@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.github.cutaway_inc.cutaway.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.github.cutaway_inc.cutaway.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_following"
+        android:name="com.github.cutaway_inc.cutaway.ui.following.FollowingFragment"
+        android:label="@string/following"
+        tools:layout="@layout/fragment_following" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.github.cutaway_inc.cutaway.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_personal_cutaway"
+        android:name="com.github.cutaway_inc.cutaway.ui.personal_cutaway.PersonalCutawayFragment"
+        android:label="@string/cutaway"
+        tools:layout="@layout/fragment_personal_cutaway" />
 </navigation>
