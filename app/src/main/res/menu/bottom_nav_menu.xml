@@ -23,4 +23,11 @@
         android:title="@string/cutaway"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/navigation_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_24dp"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
+
 </menu>

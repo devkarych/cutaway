@@ -22,4 +22,10 @@
         android:name="com.github.cutaway_inc.cutaway.ui.personal_cutaway.PersonalCutawayFragment"
         android:label="@string/cutaway"
         tools:layout="@layout/fragment_personal_cutaway" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.github.cutaway_inc.cutaway.ui.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
