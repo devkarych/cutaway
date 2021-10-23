@@ -8,6 +8,7 @@
     <color name="soft_red">#FFCC3D84</color>
     <color name="soft_purple">#FF755E90</color>
     <color name="grey">#FFA9A9A9</color>
+    <color name="dark_grey">#FF323133</color>
 
     <!--Bottom nav bar colors-->
     <color name="bottom_nav_inactive">#FFA9A9A9</color>
