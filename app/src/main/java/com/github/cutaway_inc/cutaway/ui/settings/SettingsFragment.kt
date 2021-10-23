@@ -7,15 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.github.cutaway_inc.cutaway.databinding.FragmentHomeBinding
+import com.github.cutaway_inc.cutaway.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
 
-    private lateinit var homeViewModel: SettingsViewModel
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private lateinit var settingsViewModel: SettingsViewModel
+    private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,14 +20,14 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel =
+        settingsViewModel =
             ViewModelProvider(this).get(SettingsViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, {
+        val textView: TextView = binding.textSettings
+        settingsViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root
