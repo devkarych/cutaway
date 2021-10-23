@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.github.cutaway_inc.cutaway.ui.home.HomeFragment"
+        android:name="com.github.cutaway_inc.cutaway.ui.navigation.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_following"
-        android:name="com.github.cutaway_inc.cutaway.ui.following.FollowingFragment"
+        android:name="com.github.cutaway_inc.cutaway.ui.navigation.following.FollowingFragment"
         android:label="@string/following"
         tools:layout="@layout/fragment_following" />
 
     <fragment
         android:id="@+id/navigation_personal_cutaway"
-        android:name="com.github.cutaway_inc.cutaway.ui.personal_cutaway.PersonalCutawayFragment"
+        android:name="com.github.cutaway_inc.cutaway.ui.navigation.personal_cutaway.PersonalCutawayFragment"
         android:label="@string/cutaway"
         tools:layout="@layout/fragment_personal_cutaway" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.github.cutaway_inc.cutaway.ui.settings.SettingsFragment"
+        android:name="com.github.cutaway_inc.cutaway.ui.navigation.settings.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

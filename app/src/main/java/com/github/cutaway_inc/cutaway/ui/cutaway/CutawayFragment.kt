@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.following
+package com.github.cutaway_inc.cutaway.ui.cutaway
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.github.cutaway_inc.cutaway.databinding.FragmentFollowingBinding
+import com.github.cutaway_inc.cutaway.databinding.FragmentCutawayBinding
 
-class FollowingFragment : Fragment() {
+class CutawayFragment : Fragment() {
 
-    private lateinit var followingViewModel: FollowingViewModel
-    private var _binding: FragmentFollowingBinding? = null
+    private lateinit var cutawayViewModel: CutawayViewModel
+    private var _binding: FragmentCutawayBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,17 +20,13 @@ class FollowingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        followingViewModel = ViewModelProvider(this).get(FollowingViewModel::class.java)
+        cutawayViewModel = ViewModelProvider(this).get(CutawayViewModel::class.java)
 
-        _binding = FragmentFollowingBinding.inflate(inflater, container, false)
+        _binding = FragmentCutawayBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val textView: TextView = binding.textFollowing
-        followingViewModel.text.observe(viewLifecycleOwner, {
-            textView.text = it
-        })
     }
 
     override fun onDestroyView() {

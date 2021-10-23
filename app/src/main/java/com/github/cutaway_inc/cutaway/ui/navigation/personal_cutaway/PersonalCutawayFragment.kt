@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.personal_cutaway
+package com.github.cutaway_inc.cutaway.ui.navigation.personal_cutaway
 
 import android.os.Bundle
 import android.view.LayoutInflater

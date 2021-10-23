@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.home
+package com.github.cutaway_inc.cutaway.ui.navigation.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.github.cutaway_inc.cutaway.databinding.FragmentHomeBinding
+import com.github.cutaway_inc.cutaway.databinding.FragmentSettingsBinding
 
-class HomeFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var settingsViewModel: SettingsViewModel
+    private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,15 +20,15 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        settingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, {
+        val textView: TextView = binding.textSettings
+        settingsViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
     }

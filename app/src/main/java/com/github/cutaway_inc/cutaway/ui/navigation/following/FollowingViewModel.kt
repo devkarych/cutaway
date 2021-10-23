@@ -1,13 +1,13 @@
-package com.github.cutaway_inc.cutaway.ui.personal_cutaway
+package com.github.cutaway_inc.cutaway.ui.navigation.following
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class PersonalCutawayViewModel : ViewModel() {
+class FollowingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is cutaway Fragment"
+        value = "This is following Fragment"
     }
     val text: LiveData<String> = _text
 }
