@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_home"
+        android:enabled="true"
         android:icon="@drawable/ic_home_24dp"
-        android:title="@string/home" />
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/navigation_following"
+        android:enabled="true"
         android:icon="@drawable/ic_favorite_24dp"
-        android:title="@string/following" />
+        android:title="@string/following"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/navigation_personal_cutaway"
+        android:enabled="true"
         android:icon="@drawable/ic_account_24dp"
-        android:title="@string/cutaway" />
+        android:title="@string/cutaway"
+        app:showAsAction="ifRoom" />
 
 </menu>
