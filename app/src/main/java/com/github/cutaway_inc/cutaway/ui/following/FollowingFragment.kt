@@ -20,17 +20,17 @@ class FollowingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        followingViewModel =
-            ViewModelProvider(this).get(FollowingViewModel::class.java)
+        followingViewModel = ViewModelProvider(this).get(FollowingViewModel::class.java)
 
         _binding = FragmentFollowingBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textDashboard
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val textView: TextView = binding.textFollowing
         followingViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
-        return root
     }
 
     override fun onDestroyView() {

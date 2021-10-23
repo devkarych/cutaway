@@ -24,13 +24,14 @@ class PersonalCutawayFragment : Fragment() {
             ViewModelProvider(this).get(PersonalCutawayViewModel::class.java)
 
         _binding = FragmentPersonalCutawayBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textNotifications
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val textView: TextView = binding.textCutaway
         personalCutawayViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
-        return root
     }
 
     override fun onDestroyView() {

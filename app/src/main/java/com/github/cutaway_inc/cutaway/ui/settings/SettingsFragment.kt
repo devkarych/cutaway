@@ -20,17 +20,17 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        settingsViewModel =
-            ViewModelProvider(this).get(SettingsViewModel::class.java)
+        settingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
 
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val textView: TextView = binding.textSettings
         settingsViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
-        return root
     }
 
     override fun onDestroyView() {
