@@ -21,4 +21,21 @@
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
+
+    <style name="textViewButtonText" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/soft_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">@dimen/button_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/button_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/button_vertical_padding</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="customButton" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/button_corner_radius</item>
+        <item name="cardBackgroundColor">@color/soft_red_button</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
 </resources>
