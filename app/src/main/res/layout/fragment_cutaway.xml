@@ -37,6 +37,13 @@
                 tools:srcCompat="@drawable/background_gradient" />
         </FrameLayout>
 
+        <TextView
+            style="@style/textViewCutawayLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:id="@+id/user_cutaway_header"
             android:layout_width="match_parent"
@@ -136,7 +143,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/customButton"
+                    style="@style/customDefaultButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -153,7 +160,7 @@
                     android:layout_marginHorizontal="10dp" />
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/customButton"
+                    style="@style/customDefaultButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardBackgroundColor="@color/dark_grey">
@@ -169,8 +176,6 @@
 
         </LinearLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>
