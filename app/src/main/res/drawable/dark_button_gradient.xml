@@ -3,7 +3,7 @@
     <gradient
         android:startColor="@color/dark_grey_button"
         android:endColor="@color/light_grey_button"
-        android:angle="135" />
+        android:angle="180" />
 
     <corners
         android:radius="@dimen/button_corner_radius">
