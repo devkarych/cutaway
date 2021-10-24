@@ -2,7 +2,7 @@
 <resources>
 
     <style name="textViewSecondaryTitle" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/soft_white</item>
+        <item name="android:textColor">@color/soft_red</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/comfortaa</item>
@@ -26,6 +26,7 @@
         <item name="android:textColor">@color/soft_white</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
         <item name="android:paddingStart">@dimen/button_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
         <item name="android:paddingTop">@dimen/button_vertical_padding</item>
@@ -48,4 +49,19 @@
         <item name="android:layout_marginTop">@dimen/vertical_margin</item>
         <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
     </style>
+
+    <style name="MedalCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+        <item name="cardBackgroundColor">@color/dark_grey_button</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
 </resources>
