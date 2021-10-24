@@ -7,4 +7,10 @@
     <string name="settings">Settings</string>
 
     <string name="user_avatar">Avatar</string>
+
+    <string name="fast_connect">Fast connect</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="bio">Biography</string>
+    <string name="achievements_projects">Achievements &amp; Projects</string>
 </resources>

@@ -15,6 +15,7 @@
     <!--Buttons-->
     <color name="dark_grey_button">#FF323133</color>
     <color name="soft_red_button">#CCCC3D84</color>
+    <color name="light_grey_button">#FF474748</color>
 
     <!--Bottom nav bar colors-->
     <color name="bottom_nav_inactive">#FFA9A9A9</color>
