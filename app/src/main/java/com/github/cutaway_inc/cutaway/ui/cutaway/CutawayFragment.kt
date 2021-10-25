@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentCutawayBinding
 
-class CutawayFragment : Fragment() {
+class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
 
     private lateinit var cutawayViewModel: CutawayViewModel
     private var _binding: FragmentCutawayBinding? = null
