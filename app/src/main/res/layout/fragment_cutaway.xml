@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.cutaway.CutawayFragment">
+    tools:context=".ui.navigation.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,13 +28,13 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/user_avatar"
                 android:scaleType="fitCenter"
-                tools:srcCompat="@drawable/my_full_photo" />
+                android:src="@drawable/my_full_photo_2" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/user_avatar"
-                tools:srcCompat="@drawable/full_user_pic_gradient" />
+                android:src="@drawable/full_user_pic_gradient" />
         </FrameLayout>
 
         <TextView
@@ -76,7 +76,7 @@
                     android:minWidth="@dimen/user_avatar_size"
                     android:minHeight="@dimen/user_avatar_size"
                     android:scaleType="fitCenter"
-                    tools:srcCompat="@drawable/my_icon" />
+                    android:src="@drawable/my_icon" />
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
@@ -100,7 +100,7 @@
 
                 <TextView
                     android:id="@+id/user_cutaway_username"
-                    style="@style/textViewRegular"
+                    style="@style/textViewUpperRegular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="\@Karchx" />
@@ -113,7 +113,7 @@
 
                 <TextView
                     android:id="@+id/user_cutaway_number_of_followers"
-                    style="@style/textViewRegular"
+                    style="@style/textViewUpperRegular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15.4K followers" />
@@ -141,43 +141,49 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.google.android.material.card.MaterialCardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/user_cutaway_follow_btn"
                     style="@style/customDefaultButton"
+
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:clickable="true">
 
                     <TextView
                         style="@style/textViewButtonText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/follow" />
-                </com.google.android.material.card.MaterialCardView>
+                </androidx.cardview.widget.CardView>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp" />
 
-                <com.google.android.material.card.MaterialCardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/user_cutaway_fast_connect_btn"
                     style="@style/customDefaultButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/dark_grey">
+                    app:cardBackgroundColor="@color/dark_grey"
+                    android:focusable="true"
+                    android:clickable="true">
 
                     <TextView
                         style="@style/textViewButtonText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fast_connect" />
-                </com.google.android.material.card.MaterialCardView>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <TextView
                 style="@style/textViewSecondaryTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/soft_purple"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:gravity="center"
@@ -199,14 +205,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
+                android:textColor="@color/soft_purple"
                 android:gravity="center"
                 android:text="@string/achievements_projects" />
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/user_cutaway_achievements_btn"
                 style="@style/customDefaultButton"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:focusable="true"
+                android:clickable="true"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
                 android:layout_marginTop="10dp">
 
@@ -221,16 +230,15 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <com.google.android.material.card.MaterialCardView
+                        <androidx.cardview.widget.CardView
                             style="@style/MedalCardView"
-                            android:layout_marginStart="15dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="10dp"
-                            android:background="@android:color/transparent">
+                            android:layout_marginStart="15dp"
+                            android:background="@android:color/transparent"
+                            app:cardCornerRadius="10dp">
 
                             <ImageView
-                                android:padding="6dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:adjustViewBounds="true"
@@ -239,9 +247,10 @@
                                 android:maxHeight="@dimen/medal_size"
                                 android:minWidth="@dimen/medal_size"
                                 android:minHeight="@dimen/medal_size"
+                                android:padding="6dp"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/medal" />
-                        </com.google.android.material.card.MaterialCardView>
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             style="@style/textViewButtonText"
@@ -252,7 +261,7 @@
 
                 </FrameLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>

@@ -27,10 +27,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, {
-            textView.text = it
-        })
     }
 
     override fun onDestroyView() {

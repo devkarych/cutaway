@@ -11,6 +11,13 @@
     <style name="textViewRegular" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/soft_white</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/comfortaa</item>
+    </style>
+
+    <style name="textViewUpperRegular" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/soft_white</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/comfortaa</item>
     </style>
@@ -34,7 +41,7 @@
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="customDefaultButton" parent="Widget.MaterialComponents.CardView">
+    <style name="customDefaultButton" parent="CardView">
         <item name="cardCornerRadius">@dimen/button_corner_radius</item>
         <item name="cardBackgroundColor">@color/soft_red_button</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
@@ -43,14 +50,14 @@
     <style name="textViewCutawayLogo" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/soft_white</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:text">@string/app_name</item>
         <item name="android:fontFamily">@font/satisfy</item>
         <item name="android:layout_marginTop">@dimen/vertical_margin</item>
         <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
     </style>
 
-    <style name="MedalCardView" parent="@style/Widget.MaterialComponents.CardView">
+    <style name="MedalCardView" parent="CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
         <item name="cardBackgroundColor">@color/dark_grey_button</item>
     </style>
