@@ -28,7 +28,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/user_avatar"
                 android:scaleType="fitCenter"
-                android:src="@drawable/my_full_photo_2" />
+                android:src="@drawable/my_full_photo" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -81,7 +81,7 @@
 
             <TextView
                 android:id="@+id/user_cutaway_full_name"
-                style="@style/textViewSecondaryTitle"
+                style="@style/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -147,8 +147,8 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:focusable="true"
-                    android:clickable="true">
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         style="@style/textViewButtonText"
@@ -167,9 +167,9 @@
                     style="@style/customDefaultButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/dark_grey"
+                    android:clickable="true"
                     android:focusable="true"
-                    android:clickable="true">
+                    app:cardBackgroundColor="@color/dark_grey">
 
                     <TextView
                         style="@style/textViewButtonText"
@@ -183,11 +183,11 @@
                 style="@style/textViewSecondaryTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/soft_purple"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:gravity="center"
-                android:text="@string/bio" />
+                android:text="@string/bio"
+                android:textColor="@color/soft_orange" />
 
             <TextView
                 android:id="@+id/user_cutaway_bio"
@@ -205,19 +205,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
-                android:textColor="@color/soft_purple"
                 android:gravity="center"
-                android:text="@string/achievements_projects" />
+                android:text="@string/achievements_projects"
+                android:textColor="@color/soft_orange" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/user_cutaway_achievements_btn"
                 style="@style/customDefaultButton"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:focusable="true"
-                android:clickable="true"
                 android:layout_marginHorizontal="@dimen/horizontal_margin"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -235,6 +235,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
+                            android:alpha="0.8"
                             android:background="@android:color/transparent"
                             app:cardCornerRadius="10dp">
 
@@ -256,7 +257,7 @@
                             style="@style/textViewButtonText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Achievments: Motto, Cutaway etc." />
+                            android:text="Achievements: \nMotto, Cutaway etc." />
                     </LinearLayout>
 
                 </FrameLayout>
