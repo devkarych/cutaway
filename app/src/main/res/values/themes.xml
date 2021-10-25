@@ -3,7 +3,7 @@
     <style name="Theme.Cutaway" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark_background</item>
-        <item name="colorPrimaryVariant">@color/soft_purple</item>
+        <item name="colorPrimaryVariant">@color/soft_orange</item>
         <item name="colorOnPrimary">@color/soft_white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/soft_white</item>

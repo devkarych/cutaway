@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="textViewSecondaryTitle" parent="Widget.AppCompat.TextView">
+    <style name="textViewTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/soft_red</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/comfortaa</item>
     </style>
 
+    <style name="textViewSecondaryTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/soft_red</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/comfortaa</item>
+    </style>
+
     <style name="textViewRegular" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/soft_white</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/comfortaa</item>
     </style>
 
@@ -45,6 +52,7 @@
         <item name="cardCornerRadius">@dimen/button_corner_radius</item>
         <item name="cardBackgroundColor">@color/soft_red_button</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
     <style name="textViewCutawayLogo" parent="Widget.AppCompat.TextView">
