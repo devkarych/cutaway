@@ -80,7 +80,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/user_cutaway_full_name"
+                android:id="@+id/user_cutaway_full_name_textview"
                 style="@style/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/user_cutaway_username"
+                    android:id="@+id/user_cutaway_username_textview"
                     style="@style/textViewUpperRegular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:background="@color/grey" />
 
                 <TextView
-                    android:id="@+id/user_cutaway_number_of_followers"
+                    android:id="@+id/user_cutaway_number_of_followers_textview"
                     style="@style/textViewUpperRegular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,7 +190,7 @@
                 android:textColor="@color/soft_orange" />
 
             <TextView
-                android:id="@+id/user_cutaway_bio"
+                android:id="@+id/user_cutaway_bio_textview"
                 style="@style/textViewRegular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -231,7 +231,7 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
-                            style="@style/MedalCardView"
+                            style="@style/BigImageCard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -243,7 +243,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:adjustViewBounds="true"
-                                android:contentDescription="@string/user_avatar"
+                                android:contentDescription="@string/medal_desc"
                                 android:maxWidth="@dimen/medal_size"
                                 android:maxHeight="@dimen/medal_size"
                                 android:minWidth="@dimen/medal_size"
@@ -254,10 +254,77 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
+                            android:id="@+id/user_achievements_about_textview"
                             style="@style/textViewButtonText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Achievements: \nMotto, Cutaway etc." />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/textViewSecondaryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:gravity="center"
+                android:text="@string/links_connect"
+                android:textColor="@color/soft_orange" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_cutaway_links_btn"
+                style="@style/customDefaultButton"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginHorizontal="@dimen/horizontal_margin"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dark_button_gradient">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            style="@style/BigImageCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:alpha="0.8"
+                            android:background="@android:color/transparent"
+                            app:cardCornerRadius="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:contentDescription="@string/links_desc"
+                                android:maxWidth="@dimen/medal_size"
+                                android:maxHeight="@dimen/medal_size"
+                                android:minWidth="@dimen/medal_size"
+                                android:minHeight="@dimen/medal_size"
+                                android:padding="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/link" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/user_links_about_textview"
+                            style="@style/textViewButtonText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="About me: \nYouTube Channel\nGitHub, Codeforces etc." />
                     </LinearLayout>
 
                 </FrameLayout>

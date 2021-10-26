@@ -65,7 +65,7 @@
         <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
     </style>
 
-    <style name="MedalCardView" parent="CardView">
+    <style name="BigImageCard" parent="CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
         <item name="cardBackgroundColor">@color/dark_grey_button</item>
     </style>
