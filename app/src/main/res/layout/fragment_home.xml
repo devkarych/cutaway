@@ -254,7 +254,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
-                            android:id="@+id/user_achievements_about_textview"
+                            android:id="@+id/user_achievements_about_tv"
                             style="@style/textViewButtonText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -320,7 +320,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
-                            android:id="@+id/user_links_about_textview"
+                            android:id="@+id/user_links_about_tv"
                             style="@style/textViewButtonText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -331,49 +331,70 @@
 
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:scrollbars="horizontal">
 
-                <ImageView
-                    style="@style/SocialNetworkButton"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/twitter"/>
+                    android:layout_marginHorizontal="@dimen/horizontal_margin"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    style="@style/SocialNetworkButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/facebook"/>
+                    <ImageView
+                        android:id="@+id/twitter_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/twitter" />
 
-                <ImageView
-                    style="@style/SocialNetworkButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/instagram"/>
+                    <ImageView
+                        android:id="@+id/facebook_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/facebook" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/SocialNetworkButton"
-                    android:src="@drawable/telegram"/>
+                    <ImageView
+                        android:id="@+id/instagram_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/instagram" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/SocialNetworkButton"
-                    android:src="@drawable/vk"/>
+                    <ImageView
+                        android:id="@+id/telegram_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/telegram" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/SocialNetworkButton"
-                    android:src="@drawable/linkedin"/>
+                    <ImageView
+                        android:id="@+id/vk_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/vk" />
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/linkedin_btn"
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/social_network"
+                        android:src="@drawable/linkedin" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
