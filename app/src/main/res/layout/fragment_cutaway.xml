@@ -331,6 +331,57 @@
 
             </androidx.cardview.widget.CardView>
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_marginHorizontal="@dimen/horizontal_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/twitter"/>
+
+                    <ImageView
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/facebook"/>
+
+                    <ImageView
+                        style="@style/SocialNetworkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/instagram"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/SocialNetworkButton"
+                        android:src="@drawable/telegram"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/SocialNetworkButton"
+                        android:src="@drawable/vk"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/SocialNetworkButton"
+                        android:src="@drawable/linkedin"/>
+
+                </LinearLayout>
+
+            </ScrollView>
 
         </LinearLayout>
 
