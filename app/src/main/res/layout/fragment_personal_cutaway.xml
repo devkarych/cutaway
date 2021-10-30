@@ -7,8 +7,8 @@
     tools:context=".ui.navigation.personal_cutaway.PersonalCutawayFragment">
 
     <fragment
-        android:name="com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment"
         android:id="@+id/cutaway_fragment_container"
+        android:name="com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
