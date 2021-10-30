@@ -6,17 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.navigation.personal_cutaway.PersonalCutawayFragment">
 
-    <TextView
-        android:id="@+id/text_cutaway"
+    <fragment
+        android:name="com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment"
+        android:id="@+id/cutaway_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/user_avatar"
+        android:src="@drawable/darker_user_cutaway_gradient" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/personal_cutaway_edit_cutaway"
+        style="@style/customDefaultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/textViewButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/edit_cutaway" />
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
