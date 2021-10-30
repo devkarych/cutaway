@@ -20,7 +20,7 @@ class PersonalCutawayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         personalCutawayViewModel =
-            ViewModelProvider(this).get(PersonalCutawayViewModel::class.java)
+            ViewModelProvider(this)[PersonalCutawayViewModel::class.java]
 
         _binding = FragmentPersonalCutawayBinding.inflate(inflater, container, false)
         return binding.root

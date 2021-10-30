@@ -20,7 +20,7 @@ class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        cutawayViewModel = ViewModelProvider(this).get(CutawayViewModel::class.java)
+        cutawayViewModel = ViewModelProvider(this)[CutawayViewModel::class.java]
 
         _binding = FragmentCutawayBinding.inflate(inflater, container, false)
         return binding.root

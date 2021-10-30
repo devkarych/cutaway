@@ -20,7 +20,7 @@ class FollowingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        followingViewModel = ViewModelProvider(this).get(FollowingViewModel::class.java)
+        followingViewModel = ViewModelProvider(this)[FollowingViewModel::class.java]
 
         _binding = FragmentFollowingBinding.inflate(inflater, container, false)
         return binding.root

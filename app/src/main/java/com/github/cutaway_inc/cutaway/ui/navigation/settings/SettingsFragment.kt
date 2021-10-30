@@ -20,7 +20,7 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        settingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
+        settingsViewModel = ViewModelProvider(this)[SettingsViewModel::class.java]
 
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         return binding.root
