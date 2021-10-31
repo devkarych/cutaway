@@ -17,4 +17,6 @@
     <string name="medal_desc">Medal icon</string>
     <string name="links_desc">Links icon</string>
     <string name="social_network">Social network</string>
+
+    <string name="edit_cutaway">Edit cutaway</string>
 </resources>

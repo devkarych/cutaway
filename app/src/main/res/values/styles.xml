@@ -71,6 +71,7 @@
     <style name="BigImageCard" parent="CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
         <item name="cardBackgroundColor">@color/dark_grey_button</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
 
@@ -87,15 +88,7 @@
         <item name="android:minHeight">@dimen/social_network_icon</item>
         <item name="android:maxWidth">@dimen/social_network_icon</item>
         <item name="android:minWidth">@dimen/social_network_icon</item>
-        <item name="android:titleMarginStart">10dp</item>
-        <item name="android:paddingStart">10dp</item>
-        <item name="android:paddingEnd">10dp</item>
-        <item name="android:clickable">true</item>
-        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
-        <item name="android:focusable">true</item>
-        <item name="android:titleMarginEnd">10dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
+        <item name="cardElevation">0dp</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:adjustViewBounds">true</item>
     </style>
