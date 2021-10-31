@@ -11,7 +11,6 @@ import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentCutawayBinding
 
-
 class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
 
     private lateinit var cutawayViewModel: CutawayViewModel
