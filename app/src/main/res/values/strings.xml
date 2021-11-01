@@ -19,4 +19,5 @@
     <string name="social_network">Social network</string>
     <string name="edit_cutaway">Edit cutaway</string>
     <string name="search_by_people">Search by people</string>
+    <string name="cancel">Cancel</string>
 </resources>
