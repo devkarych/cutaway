@@ -125,7 +125,7 @@
             android:id="@+id/user_cutaway_content_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/horizontal_margin"
+
             android:layout_marginTop="@dimen/user_avatar_margin_top"
             android:layout_weight="1"
             android:gravity="center"

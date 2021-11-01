@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/search_by_people"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/ic_search_24dp">
 
@@ -37,7 +38,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/roboto"
-                android:hint="@string/search_by_people"
                 android:maxLength="100"
                 android:singleLine="true"
                 android:textColor="@color/soft_white"
@@ -45,6 +45,14 @@
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feed_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:scrollbars="vertical" />
 
     </LinearLayout>
 
