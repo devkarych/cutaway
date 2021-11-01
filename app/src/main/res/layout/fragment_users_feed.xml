@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/users_feed_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
@@ -36,10 +37,12 @@
                 android:id="@+id/global_search_ti_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="username"
                 android:clickable="true"
                 android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:fontFamily="@font/roboto"
-                android:maxLength="100"
+                android:maxLength="50"
                 android:singleLine="true"
                 android:textColor="@color/soft_white"
                 android:textColorHint="@color/soft_red"
