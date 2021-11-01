@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.cutaway
+package com.github.cutaway_inc.cutaway.ui.cutaway.social_network
 
 import android.content.Context
 import android.view.LayoutInflater
