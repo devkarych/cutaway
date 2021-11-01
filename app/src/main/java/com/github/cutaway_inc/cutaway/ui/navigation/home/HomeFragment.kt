@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentHomeBinding
-import com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment
 import com.github.cutaway_inc.cutaway.ui.navigation.home.feed.FeedFragment
 
 class HomeFragment : Fragment() {
