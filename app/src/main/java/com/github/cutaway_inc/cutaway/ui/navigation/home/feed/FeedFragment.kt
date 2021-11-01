@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
@@ -32,6 +33,8 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
         binding.globalSearchTiText.setOnClickListener {
             val searchFragment = SearchFragment()
             requireActivity().supportFragmentManager.beginTransaction().apply {
+                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                setCustomAnimations(R.anim.slide_up, R.anim.slide_down)
                 replace(R.id.home_fragment_container, searchFragment)
                 addToBackStack(null)
                 commit()
