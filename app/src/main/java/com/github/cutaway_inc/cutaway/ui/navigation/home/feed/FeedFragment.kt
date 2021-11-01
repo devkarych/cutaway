@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.cutaway_inc.cutaway.R
-import com.github.cutaway_inc.cutaway.databinding.FragmentHomeBinding
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
-import com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment
 
 class FeedFragment : Fragment(R.layout.fragment_users_feed) {
 
