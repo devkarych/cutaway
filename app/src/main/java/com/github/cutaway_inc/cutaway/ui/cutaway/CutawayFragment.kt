@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentCutawayBinding
+import com.github.cutaway_inc.cutaway.ui.cutaway.social_network.SocialNetwork
+import com.github.cutaway_inc.cutaway.ui.cutaway.social_network.SocialNetworksAdapter
 
 class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
 

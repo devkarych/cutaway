@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.navigation.home
+package com.github.cutaway_inc.cutaway.ui.navigation.home.feed
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentHomeBinding
+import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
 import com.github.cutaway_inc.cutaway.ui.cutaway.CutawayFragment
-import com.github.cutaway_inc.cutaway.ui.navigation.home.feed.FeedFragment
 
-class HomeFragment : Fragment() {
+class FeedFragment : Fragment(R.layout.fragment_users_feed) {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var feedViewModel: FeedViewModel
+    private var _binding: FragmentUsersFeedBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,18 +22,13 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        feedViewModel = ViewModelProvider(this)[FeedViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentUsersFeedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val feedFragment = FeedFragment()
-        requireActivity().supportFragmentManager.beginTransaction().apply {
-            replace(R.id.home_fragment_container, feedFragment)
-            commit()
-        }
     }
 
     override fun onDestroyView() {
