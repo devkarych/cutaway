@@ -1,7 +1,6 @@
 package com.github.cutaway_inc.cutaway.ui.navigation.home.global_search
 
 import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersSearchBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class SearchFragment : Fragment(R.layout.fragment_users_search) {
 
@@ -31,19 +31,15 @@ class SearchFragment : Fragment(R.layout.fragment_users_search) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val globalSearchTiText = binding.globalSearchTiText
+        val inputService = requireActivity().getSystemService(Activity.INPUT_METHOD_SERVICE) as
+                InputMethodManager
+
         binding.usersSearchScreen.setOnClickListener {
-            hideKeyboard()
+            hideKeyboard(inputService)
             globalSearchTiText.clearFocus()
         }
 
-        Thread {
-            globalSearchTiText.isFocusableInTouchMode = true
-            globalSearchTiText.requestFocus()
-            val lManager =
-                requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            lManager.showSoftInput(globalSearchTiText, 0)
-        }.run()
-
+        Thread { setFocusOnTi(globalSearchTiText, inputService) }.run()
 
         binding.cancelSearchContainer.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStackImmediate()
@@ -55,9 +51,13 @@ class SearchFragment : Fragment(R.layout.fragment_users_search) {
         _binding = null
     }
 
-    private fun hideKeyboard() {
-        val imm =
-            requireActivity().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    private fun setFocusOnTi(tiText: TextInputEditText, imm: InputMethodManager) {
+        tiText.isFocusableInTouchMode = true
+        tiText.requestFocus()
+        imm.showSoftInput(tiText, 0)
+    }
+
+    private fun hideKeyboard(imm: InputMethodManager) {
         var view = requireActivity().currentFocus
         if (view == null) {
             view = View(requireActivity())
