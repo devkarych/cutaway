@@ -20,4 +20,5 @@
     <string name="edit_cutaway">Edit cutaway</string>
     <string name="search_by_people">Search by people</string>
     <string name="cancel">Cancel</string>
+    <string name="feed">Matched for you</string>
 </resources>
