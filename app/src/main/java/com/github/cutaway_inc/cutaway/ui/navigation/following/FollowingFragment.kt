@@ -27,10 +27,6 @@ class FollowingFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val textView: TextView = binding.textFollowing
-        followingViewModel.text.observe(viewLifecycleOwner, {
-            textView.text = it
-        })
     }
 
     override fun onDestroyView() {
