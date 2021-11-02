@@ -38,7 +38,7 @@ class FeedAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is FeedViewHolder) {
-            val user = users[position-1].toUser()
+            val user = users[position - 1].toUser()
             setImage(holder, _imageId = "my_icon")
             holder.userUsername.text = "@${user.username}"
             holder.userFullName.text = user.fullName

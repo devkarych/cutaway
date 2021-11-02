@@ -12,6 +12,7 @@ import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.data.user.UserDtf
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
+import com.github.cutaway_inc.cutaway.ui.features.AnimatedView
 import com.github.cutaway_inc.cutaway.ui.navigation.home.global_search.SearchFragment
 
 class FeedFragment : Fragment(R.layout.fragment_users_feed) {
@@ -78,6 +79,9 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
         val layoutManager = GridLayoutManager(requireContext(), 1)
         recycler.layoutManager = layoutManager
         recycler.adapter = adapter
+
+        val rvAnimated = AnimatedView(recycler)
+        rvAnimated.setScaleAnimation()
     }
 
     override fun onDestroyView() {
