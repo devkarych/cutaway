@@ -15,7 +15,7 @@ import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.data.user.UserDtf
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
 import com.github.cutaway_inc.cutaway.ui.features.anim.AnimationForce
-import com.github.cutaway_inc.cutaway.ui.features.anim.ViewAnimation
+import com.github.cutaway_inc.cutaway.ui.features.anim.ViewAnimator
 import com.github.cutaway_inc.cutaway.ui.navigation.home.global_search.SearchFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -47,8 +47,11 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
 
         lifecycleScope.launch {
             feedViewModel.getUsersResp().collectLatest { usersResp ->
-                setAdapter(recycler = feedRecycler, content = usersResp)
-                ViewAnimation().submitScaleAnim(view = feedRecycler, force = AnimationForce.LOW)
+                submitFeedRvAdapter(recycler = feedRecycler, content = usersResp)
+                ViewAnimator().submitScaleAnim(
+                    view = feedRecycler,
+                    force = AnimationForce.INVISIBLE
+                )
             }
         }
     }
@@ -62,11 +65,11 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
         val recycler = binding.feedRv
         val layoutManager = GridLayoutManager(requireContext(), 1)
         recycler.layoutManager = layoutManager
-        setAdapter(recycler)
+        submitFeedRvAdapter(recycler)
         return recycler
     }
 
-    private fun setAdapter(recycler: RecyclerView, content: List<UserDtf> = emptyList()) {
+    private fun submitFeedRvAdapter(recycler: RecyclerView, content: List<UserDtf> = emptyList()) {
         val adapter = FeedAdapter(
             requireContext(),
             requireActivity() as MainActivity,

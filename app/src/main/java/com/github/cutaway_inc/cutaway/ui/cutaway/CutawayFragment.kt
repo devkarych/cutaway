@@ -6,18 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.databinding.FragmentCutawayBinding
 import com.github.cutaway_inc.cutaway.ui.cutaway.social_network.SocialNetwork
 import com.github.cutaway_inc.cutaway.ui.cutaway.social_network.SocialNetworksAdapter
+import com.github.cutaway_inc.cutaway.ui.features.anim.AnimationForce
+import com.github.cutaway_inc.cutaway.ui.features.anim.ViewAnimator
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
 
     private lateinit var cutawayViewModel: CutawayViewModel
     private var _binding: FragmentCutawayBinding? = null
     private val binding get() = _binding!!
+    private val viewAnimator = ViewAnimator()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +38,32 @@ class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val socialNetworksRecycler = binding.socialNetworksRv
+        val socialNetRv = initSocialNetworksRv()
+        val followBtn = binding.userCutawayFollowBtn
+        val fastConnectBtn = binding.userCutawayFastConnectBtn
+        val userLinksBtn = binding.userCutawayLinksBtn
+        val userAchievesBtn = binding.userCutawayAchievementsBtn
+
+
+        listOf(followBtn, fastConnectBtn, userLinksBtn, userAchievesBtn).forEach {
+            viewAnimator.submitScaleAnim(it, AnimationForce.STRONG)
+        }
+
+        lifecycleScope.launch {
+            cutawayViewModel.getSocialNetworks().collectLatest { socialNetResp ->
+                submitSocialNetworksRvAdapter(recycler = socialNetRv, content = socialNetResp)
+                viewAnimator.submitScaleAnim(view = socialNetRv, force = AnimationForce.STRONG)
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun initSocialNetworksRv(): RecyclerView {
+        val recycler = binding.socialNetworksRv
         val adapter = SocialNetworksAdapter(
             requireContext(),
             requireActivity() as MainActivity,
@@ -48,13 +80,21 @@ class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
             )
         )
         val layoutManager = getHorizontalRVManager()
-        socialNetworksRecycler.layoutManager = layoutManager
-        socialNetworksRecycler.adapter = adapter
+        recycler.layoutManager = layoutManager
+        recycler.adapter = adapter
+        return recycler
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun submitSocialNetworksRvAdapter(
+        recycler: RecyclerView,
+        content: List<SocialNetwork>
+    ) {
+        val adapter = SocialNetworksAdapter(
+            requireContext(),
+            requireActivity() as MainActivity,
+            socialNetworks = content
+        )
+        recycler.adapter = adapter
     }
 
     private fun getHorizontalRVManager(): LinearLayoutManager {
