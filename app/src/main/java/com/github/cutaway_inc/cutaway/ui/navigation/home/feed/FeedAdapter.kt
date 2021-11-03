@@ -26,7 +26,7 @@ class FeedAdapter(
 
         if (viewType == TYPE_ITEM) {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.user_feed_item, parent, false)
+                .inflate(R.layout.user_list_item, parent, false)
             return FeedViewHolder(view)
         } else if (viewType == TYPE_HEADER) {
             val view = LayoutInflater.from(parent.context)

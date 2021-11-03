@@ -1,4 +1,4 @@
-package com.github.cutaway_inc.cutaway.ui.features
+package com.github.cutaway_inc.cutaway.ui.features.anim
 
 import android.view.View
 import android.view.animation.Animation
@@ -6,16 +6,16 @@ import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 
 class AnimatedView(private val view: View) {
-    fun setScaleAnimation() {
+    fun setScaleAnimation(force: Float) {
         val anim = ScaleAnimation(
-            0.95f,
+            force,
             1.0f,
-            0.95f,
+            force,
             1.0f,
             Animation.RELATIVE_TO_SELF,
-            0.95f,
+            force,
             Animation.RELATIVE_TO_SELF,
-            0.95f
+            force
         )
         anim.duration = Constants.FADE_DURATION
         view.startAnimation(anim)

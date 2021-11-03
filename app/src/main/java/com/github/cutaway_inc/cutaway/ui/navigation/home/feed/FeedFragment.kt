@@ -7,13 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
 import com.github.cutaway_inc.cutaway.data.user.UserDtf
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
-import com.github.cutaway_inc.cutaway.ui.features.AnimatedView
+import com.github.cutaway_inc.cutaway.ui.features.anim.AnimationForce
+import com.github.cutaway_inc.cutaway.ui.features.anim.ViewAnimation
 import com.github.cutaway_inc.cutaway.ui.navigation.home.global_search.SearchFragment
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class FeedFragment : Fragment(R.layout.fragment_users_feed) {
 
@@ -34,58 +39,54 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        val feedRecycler = initFeedRecycler()
+
         binding.globalSearchTiText.setOnClickListener {
-            val searchFragment = SearchFragment()
-            requireActivity().supportFragmentManager.beginTransaction().apply {
-                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                setCustomAnimations(
-                    R.anim.slide_up,
-                    R.anim.stub_anim,
-                    R.anim.slide_down,
-                    R.anim.stub_anim
-                )
-                replace(R.id.home_fragment_container, searchFragment)
-                addToBackStack(null)
-                commit()
-            }
+            transactSearchFragment(SearchFragment())
         }
 
-        val recycler = binding.feedRv
-        val adapter = FeedAdapter(
-            requireContext(),
-            requireActivity() as MainActivity,
-            listOf(
-                UserDtf(1, "karchx", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx1", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx2", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx3", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx4", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx5", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx6", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx7", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx8", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx9", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx10", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx11", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx12", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx13", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx14", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx15", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx16", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx17", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx18", "Andrey Karchevsky", "some_link", 15)
-            )
-        )
-        val layoutManager = GridLayoutManager(requireContext(), 1)
-        recycler.layoutManager = layoutManager
-        recycler.adapter = adapter
-
-        val rvAnimated = AnimatedView(recycler)
-        rvAnimated.setScaleAnimation()
+        lifecycleScope.launch {
+            feedViewModel.getUsersResp().collectLatest { usersResp ->
+                setAdapter(recycler = feedRecycler, content = usersResp)
+                ViewAnimation().submitScaleAnim(view = feedRecycler, force = AnimationForce.LOW)
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun initFeedRecycler(): RecyclerView {
+        val recycler = binding.feedRv
+        val layoutManager = GridLayoutManager(requireContext(), 1)
+        recycler.layoutManager = layoutManager
+        setAdapter(recycler)
+        return recycler
+    }
+
+    private fun setAdapter(recycler: RecyclerView, content: List<UserDtf> = emptyList()) {
+        val adapter = FeedAdapter(
+            requireContext(),
+            requireActivity() as MainActivity,
+            users = content
+        )
+        recycler.adapter = adapter
+    }
+
+    private fun transactSearchFragment(frag: SearchFragment) {
+        requireActivity().supportFragmentManager.beginTransaction().apply {
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            setCustomAnimations(
+                R.anim.slide_up,
+                R.anim.stub_anim,
+                R.anim.slide_down,
+                R.anim.stub_anim
+            )
+            replace(R.id.home_fragment_container, frag)
+            addToBackStack(null)
+            commit()
+        }
     }
 }
