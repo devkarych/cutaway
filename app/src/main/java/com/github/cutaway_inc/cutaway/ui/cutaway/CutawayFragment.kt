@@ -52,7 +52,7 @@ class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
         lifecycleScope.launch {
             cutawayViewModel.getSocialNetworks().collectLatest { socialNetResp ->
                 submitSocialNetworksRvAdapter(recycler = socialNetRv, content = socialNetResp)
-                viewAnimator.submitScaleAnim(view = socialNetRv, force = AnimationForce.STRONG)
+                viewAnimator.submitScaleAnim(view = socialNetRv, force = AnimationForce.INVISIBLE)
             }
         }
     }
