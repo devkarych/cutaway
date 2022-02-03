@@ -16,7 +16,7 @@
         android:layout_marginStart="@dimen/horizontal_margin"
         android:layout_marginTop="4dp"
         app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="48dp"
+        app:cardCornerRadius="64dp"
         app:cardElevation="0dp">
 
         <ImageView
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="Andrey Karchevsky"
             android:textColor="@color/grey"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -52,9 +52,9 @@
             android:layout_below="@id/user_feed_full_name"
             android:layout_marginTop="1dp"
             android:fontFamily="@font/roboto"
-            android:text="\@karchx"
+            android:text="\@kaarych"
             android:textColor="@color/soft_orange"
-            android:textSize="13sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/user_feed_followers"
@@ -68,7 +68,7 @@
             android:fontFamily="@font/roboto"
             android:text=", 15k followers"
             android:textColor="@color/grey"
-            android:textSize="13sp" />
+            android:textSize="14sp" />
 
         <View
             android:layout_width="match_parent"

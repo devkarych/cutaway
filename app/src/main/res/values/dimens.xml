@@ -9,5 +9,5 @@
     <dimen name="button_vertical_padding">16dp</dimen>
     <dimen name="button_horizontal_padding">40dp</dimen>
     <dimen name="social_network_icon">48dp</dimen>
-    <dimen name="user_icon">36dp</dimen>
+    <dimen name="user_icon">44dp</dimen>
 </resources>
