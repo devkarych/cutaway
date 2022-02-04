@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.cutaway_inc.cutaway.MainActivity
 import com.github.cutaway_inc.cutaway.R
+import com.github.cutaway_inc.cutaway.data.user.User
 import com.github.cutaway_inc.cutaway.data.user.UserDtf
 import com.github.cutaway_inc.cutaway.databinding.FragmentUsersFeedBinding
 import com.github.cutaway_inc.cutaway.ui.features.AnimatedView
@@ -51,30 +52,14 @@ class FeedFragment : Fragment(R.layout.fragment_users_feed) {
         }
 
         val recycler = binding.feedRv
+        val feedList = mutableListOf<UserDtf>()
+        for (i in 1..50) {
+            feedList.add(UserDtf(1, "kaarych", "Andrey Karchevsky", "some_link", 1192),)
+        }
         val adapter = FeedAdapter(
             requireContext(),
             requireActivity() as MainActivity,
-            listOf(
-                UserDtf(1, "karchx", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx1", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx2", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx3", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx4", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx5", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx6", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx7", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx8", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx9", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx10", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx11", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx12", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx13", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx14", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx15", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx16", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx17", "Andrey Karchevsky", "some_link", 15),
-                UserDtf(1, "karchx18", "Andrey Karchevsky", "some_link", 15)
-            )
+            feedList
         )
         val layoutManager = GridLayoutManager(requireContext(), 1)
         recycler.layoutManager = layoutManager

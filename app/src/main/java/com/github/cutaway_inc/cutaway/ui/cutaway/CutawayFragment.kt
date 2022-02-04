@@ -41,9 +41,6 @@ class CutawayFragment : Fragment(R.layout.fragment_cutaway) {
                 SocialNetwork("instagram", "https://instagram.com/the_karchx"),
                 SocialNetwork("linkedin", "some_link"),
                 SocialNetwork("twitter", "link"),
-                SocialNetwork("wechat", "link"),
-                SocialNetwork("linkedin", "some_link"),
-                SocialNetwork("twitter", "link"),
                 SocialNetwork("wechat", "link")
             )
         )
